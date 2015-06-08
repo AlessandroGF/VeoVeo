@@ -1,114 +1,26 @@
-<?php require "dbconfig.php";
+
+<?php 
+require "dbconfig.php";
+include "head.inc.php";
 if(isset($_GET["puntajecant"])){
 $puntajeget = $_GET["puntajecant"];
 }else{
   $puntajeget=0;
 } ?>
-<!DOCTYPE html>
-<meta charset="utf-8">
-<title>¡Veo veo!</title>
- <!-- Bootstrap core CSS -->
- <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-<style>
-  * {
-    font-family: Verdana, Arial, sans-serif;
-  }
-  body{
-    background-color: #81BEF7;
-  }
-  a:link {
-    color:#000;
-    text-decoration: none;
-  }
-  a:visited {
-    color:#000;
-  }
-  a:hover {
-    color:#33F;
-  }
-  .button {
-    background: -webkit-linear-gradient(top,#008dfd 0,#0370ea 100%);
-    border: 1px solid #076bd2;
-    border-radius: 3px;
-    color: #fff;
-    display: none;
-    font-size: 13px;
-    font-weight: bold;
-    line-height: 1.3;
-    padding: 8px 25px;
-    text-align: center;
-    text-shadow: 1px 1px 1px #076bd2;
-    letter-spacing: normal;
-  }
-  .center {
-    padding: 10px;
-    text-align: center;
-  }
-  .final {
-    color: black;
-    padding-right: 3px; 
-  }
-  .interim {
-    color: gray;
-  }
-  .info {
-    font-size: 14px;
-    text-align: center;
-    color: #777;
-    display: none;
-  }
-  .right {
-    float: right;
-  }
-  .sidebyside {
-    display: inline-block;
-    width: 45%;
-    min-height: 40px;
-    text-align: left;
-    vertical-align: top;
-  }
-  #headline {
-    font-size: 40px;
-    font-weight: 300;
-    color: #FFFFFF;
-  }
-  #info {
-    font-size: 20px;
-    text-align: center;
-    color: #777;
-    visibility: hidden;
-  }
-  #results {
-    font-size: 14px;
-    font-weight: bold;
-    border: 1px solid #ddd;
-    padding: 15px;
-    text-align: left;
-    min-height: 150px;
-  }
-  #start_button {
-    border: 0;
-    background-color:transparent;
-    padding: 0;
-  }
-
-  #info p {}
-</style>
 
 <div class="container-fluid">
 
-<h1 class="center" id="headline" style="padding:4px;margin:4px">¡Veo veo!</h1>
+  <h1 class="center" id="headline" style="padding:4px;margin:4px">¡Veo veo!</h1>
 
 
 
 
-<div class="clear"></div>
+  <div class="clear"></div>
 
-<div id="correcto" style="display:none" align="center" > <h1 class="text-success">CORRECTO!!</h1></div>
-<div id="incorrecto" style="display:none" align="center" > <h4 class="text-danger">Incorrecto!!<br><small>Intente de nuevo</small></h4></div>
+  <div id="correcto" style="display:none" align="center" > <h1 class="text-success">CORRECTO!!</h1></div>
+  <div id="incorrecto" style="display:none" align="center" > <h4 class="text-danger">Incorrecto!!<br><small>Intente de nuevo</small></h4></div>
 
-<div class="row" align="center"  >
+  <div class="row" align="center"  >
 
 
     <?php
@@ -209,7 +121,7 @@ $puntajeget = $_GET["puntajecant"];
      Actualizar a <a href="//www.google.com/chrome">Chrome</a>
      version 25 o superior.</p>
 </div>
-<script>
+<script type="text/javascript">
 var langs =
 [['Afrikaans',       ['af-ZA']],
  ['Bahasa Indonesia',['id-ID']],
@@ -467,7 +379,8 @@ function showInfo(s) {
 function comparar(){
   var imagen = "<?php echo $imagen; ?>";
   var palabra = document.getElementById("resultado").value;
-
+  console.log(imagen);
+  console.log(palabra);
   palabra = palabra.toLowerCase();
   imagen = imagen.toLowerCase();
 
@@ -514,6 +427,3 @@ function cambiar(){
   }
 }
 </script>
-<!-- Latest compiled and minified JavaScript -->
-<script type="text/javascript" src="http://code.jquery.com/jquery-git2.min.javascript"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
