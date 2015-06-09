@@ -118,10 +118,10 @@ $puntajeget = $_GET["puntajecant"];
         $a=1;
       }
       $query = "SELECT * FROM imagenes where id = $a";
-      $resp = mysql_query($query);
+      $resp = $con->query($query);
       
 
-    while ( $row = mysql_fetch_array($resp)) {
+    while ( $row = $resp->fetch_array(MYSQLI_BOTH)) {
       $imagen = $row[1];
 
      
@@ -170,8 +170,8 @@ $puntajeget = $_GET["puntajecant"];
 
 
   $query2 = "SELECT count(*) FROM imagenes ";
-  $resp2 = mysql_query($query2);
-  $max = mysql_fetch_array($resp2);
+  $resp2 = $con->query($query2);
+  $max = $resp2->fetch_array(MYSQLI_BOTH)or die(mysqli_error());
   $i=$a+1;
   if ($i>$max[0]) {
     $i=1;
